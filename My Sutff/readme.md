@@ -41,8 +41,9 @@
   - `df.sort_values([column_name1, column_name2], ascending=x)`: sort rows  by `column_name1`, then `column_name2`. Ascending order if `x` is `True`
 - `df = df.drop(columns=[column_name])`: Remove the specified column by `column_name`
 
+# Examples
 
-# Add a total for the numeric values
+## Add a total for the numeric values
 ```python
 df['Total'] = df['HP'] + df['Attack'] + df['Defense'] + df['Sp.Atk'] + df['Sp. Def'] + df['Speed']
 # OR
@@ -50,13 +51,13 @@ df['Total'] = df['HP'] + df['Attack'] + df['Defense'] + df['Sp.Atk'] + df['Sp. D
 df['Total'] = df.iloc[:, 4:9].sum(axis=1)
 ```
 
-# Not using literal strings, sum all the numierc values
+## Not using literal strings, sum all the numierc values
 ```python
 columns = df.columns
 df = df[columns[0:5] + [columns[-1]] + columns[4:12]]
 ```
 
-# Reordering columns: move the "total" column between 'legendary' and 'HP'
+## Reordering columns: move the "total" column between 'legendary' and 'HP'
 ```python
 # Get all of the column names as a list
 columns = list(df.columns)
